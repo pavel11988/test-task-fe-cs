@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Montserrat:wght@500&family=Rubik:wght@400;500&display=swap");
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat.svg") format("svg"),
+    url("../assets/fonts/Montserrat.ttf") format("truetype"),
+    url("../assets/fonts/Montserrat.woff") format("woff"),
+    url("../assets/fonts/Montserrat.woff2") format("woff2");
+
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik";
+
+  src: url("../assets/fonts/Rubik.svg#Rubik-Light") format("svg"),
+    url("../assets/fonts/Rubik.ttf") format("truetype"),
+    url("../assets/fonts/Rubik.woff") format("woff"),
+    url("../assets/fonts/Rubik.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LexendDeca";
+  font-family: sans-serif;
+  src: url("../assets/fonts/LexendDeca.svg#LexendDeca-Regular") format("svg"),
+    url("../assets/fonts/LexendDeca.ttf") format("truetype"),
+    url("../assets/fonts/LexendDeca.woff") format("woff"),
+    url("../assets/fonts/LexendDeca.woff2") format("woff2");
+
+  font-weight: 400;
+  font-style: normal;
+}

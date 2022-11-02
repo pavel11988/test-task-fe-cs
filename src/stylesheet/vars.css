@@ -1,0 +1,11 @@
+:root {
+  /* colors */
+  --controls-background: #224957;
+  --primary: #20df7f;
+  --hover: #008b45;
+  --background: #093545;
+  --white: #ffffff;
+
+  /* animation */
+  --cubic: 250ms cubic-bezier(0.8, 0.4, 0.3, 0.9);
+}

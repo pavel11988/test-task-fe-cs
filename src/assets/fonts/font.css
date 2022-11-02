@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Montserrat-Thin';
+  src: url('Montserrat-Thin.svg#Montserrat-Thin') format('svg'),
+       url('Montserrat-Thin.ttf') format('truetype'),
+       url('Montserrat-Thin.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('Montserrat.eot');
+  src: url('Montserrat.eot?#iefix') format('embedded-opentype'),
+       url('Montserrat.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Rubik-Light';
+  src: url('Rubik-Light.svg#Rubik-Light') format('svg'),
+       url('Rubik-Light.ttf') format('truetype'),
+       url('Rubik-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik-VariableFont_wght';
+  src: url('Rubik-VariableFont_wght.eot');
+  src: url('Rubik-VariableFont_wght.eot?#iefix') format('embedded-opentype'),
+       url('Rubik-VariableFont_wght.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LexendDeca-Regular';
+  src: url('LexendDeca-Regular.svg#LexendDeca-Regular') format('svg'),
+       url('LexendDeca-Regular.ttf') format('truetype'),
+       url('LexendDeca-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LexendDeca';
+  src: url('LexendDeca.eot');
+  src: url('LexendDeca.eot?#iefix') format('embedded-opentype'),
+       url('LexendDeca.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
