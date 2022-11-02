@@ -1,22 +1,36 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = "http://localhost:3000";
+const BASE_URL = "http://localhost:3000";
 
-const loginUser = createAsyncThunk("auth/login", async (credentials) => {
-  try {
-    const data = await axios.post("/login", credentials);
-    console.log(data);
-    return data;
-  } catch (error) {
-    //обработка ошибки
-    console.log(`Registration error, ${error}`);
-    throw error;
+interface ILoginCredentials {
+  email: string;
+  password: string;
+  remember: boolean;
+}
+
+const login = createAsyncThunk(
+  "auth/login",
+  async (credentials: ILoginCredentials) => {
+    const body = new URLSearchParams({
+      email: credentials.email,
+      password: credentials.password,
+    });
+    try {
+      const response = axios({
+        method: "post",
+        url: `${BASE_URL}/login`,
+        data: body,
+      });
+      return response.then((res) => res.data);
+    } catch (error) {
+      return error;
+    }
   }
-});
+);
 
 const authOperations = {
-  loginUser,
+  login,
 };
 
 export default authOperations;

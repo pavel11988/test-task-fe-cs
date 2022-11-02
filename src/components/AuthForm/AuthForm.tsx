@@ -33,12 +33,13 @@ const AuthForm = () => {
   };
 
   const handleSubmit = async () => {
-    const user = {
+    const loginConfig = {
       email,
       password,
+      remember,
     };
-    console.log(user);
-    // dispatch(authOperations.loginUser(user));
+    console.log(loginConfig);
+    dispatch(authOperations.login(loginConfig));
     // const response = await fetch("http://localhost:3000/login");
     // console.log(response.json());
     resetForm();

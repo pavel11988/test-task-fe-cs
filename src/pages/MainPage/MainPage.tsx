@@ -1,8 +1,8 @@
 import React from "react";
 import TasksList from "../../components/TasksList/TasksList";
-import { Container, TasksSection, TasksTitle } from "./HomePage.styled";
+import { Container, TasksSection, TasksTitle } from "./MainPage.styled";
 
-export const HomePage: React.FC = () => {
+export const MainPage = () => {
   return (
     <Container>
       <TasksSection>
@@ -13,4 +13,4 @@ export const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;
+export default MainPage;
