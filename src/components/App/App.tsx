@@ -26,31 +26,29 @@ function App() {
   }, [localStorageToken, dispatch]);
 
   return (
-    <>
-      <Suspense fallback={<Loader color={`var(--loader)`} />}>
-        <Routes>
-          <Route
-            index
-            path="/login"
-            element={
-              <PublicRoute>
-                <AuthPage />
-              </PublicRoute>
-            }
-          />
+    <Suspense fallback={<Loader color={`var(--loader)`} />}>
+      <Routes>
+        <Route
+          index
+          path="/login"
+          element={
+            <PublicRoute>
+              <AuthPage />
+            </PublicRoute>
+          }
+        />
 
-          <Route
-            path="/"
-            element={
-              <PrivateRoute>
-                <MainPage />
-              </PrivateRoute>
-            }
-          />
-        </Routes>
-        <ToastContainer />
-      </Suspense>
-    </>
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <MainPage />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+      <ToastContainer />
+    </Suspense>
   );
 }
 
