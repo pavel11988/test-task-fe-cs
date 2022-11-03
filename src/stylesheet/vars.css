@@ -8,6 +8,9 @@
 
   --loader: #3aaed2;
 
+  --error-title: #ff7474;
+  --error-text: #ffafaf;
+
   /* animation */
   --cubic: 250ms cubic-bezier(0.8, 0.4, 0.3, 0.9);
 }
