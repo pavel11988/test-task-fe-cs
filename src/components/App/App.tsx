@@ -1,8 +1,12 @@
-import React, { lazy } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
-// import AuthPage from "../../pages/AuthPage/AuthPage";
-// import MainPage from "../../pages/MainPage/MainPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import { useAppDispatch } from "../../hooks/redux";
+import authOperations from "../../redux/authSlice/authOperations";
+
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import PublicRoute from "../PublicRoute/PublicRoute";
 
@@ -10,27 +14,38 @@ const MainPage = lazy(() => import("../../pages/MainPage/MainPage"));
 const AuthPage = lazy(() => import("../../pages/AuthPage/AuthPage"));
 
 function App() {
-  return (
-    <Routes>
-      <Route
-        index
-        path="/login"
-        element={
-          <PublicRoute>
-            <AuthPage />
-          </PublicRoute>
-        }
-      />
+  const dispatch = useAppDispatch();
+  const localStorageToken = localStorage.getItem("token");
+  useEffect(() => {
+    if (localStorageToken) {
+      dispatch(authOperations.setToken({ token: localStorageToken }));
+    }
+  }, [localStorageToken, dispatch]);
 
-      <Route
-        path="/main"
-        element={
-          <PrivateRoute>
-            <MainPage />
-          </PrivateRoute>
-        }
-      />
-    </Routes>
+  return (
+    <Suspense fallback={<h2>Downdload...</h2>}>
+      <Routes>
+        <Route
+          index
+          path="/login"
+          element={
+            <PublicRoute>
+              <AuthPage />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <MainPage />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+      <ToastContainer />
+    </Suspense>
   );
 }
 

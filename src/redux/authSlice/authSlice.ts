@@ -1,3 +1,4 @@
+import { IToken } from "./../../models/IToken";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ILoginRes } from "../../models/ILoginRes";
 import authOperations from "./authOperations";
@@ -29,10 +30,29 @@ const authSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [authOperations.login.pending.type]: (
+    // set token
+    [authOperations.setToken.pending.type]: (state, action: PayloadAction) => {
+      state.isLoadingUser = true;
+      state.error = null;
+    },
+    [authOperations.setToken.fulfilled.type]: (
       state,
-      action: PayloadAction<ILoginRes>
+      action: PayloadAction<IToken>
     ) => {
+      state.isLoadingUser = false;
+      state.error = null;
+      state.token = action.payload.token;
+      state.isLoggedIn = true;
+    },
+    [authOperations.setToken.rejected.type]: (state, action: PayloadAction) => {
+      state.isLoadingUser = false;
+      state.error = null;
+      state.token = null;
+      state.isLoggedIn = false;
+    },
+
+    // login
+    [authOperations.login.pending.type]: (state, action: PayloadAction) => {
       state.isLoadingUser = true;
       state.error = null;
     },
@@ -40,7 +60,6 @@ const authSlice = createSlice({
       state,
       action: PayloadAction<ILoginRes>
     ) => {
-      console.log(action.payload);
       state.user = action.payload.user;
       state.token = action.payload.accessToken;
       state.isLoggedIn = true;
@@ -49,9 +68,11 @@ const authSlice = createSlice({
     },
     [authOperations.login.rejected.type]: (
       state,
-      action: PayloadAction<ILoginRes>
+      action: PayloadAction<string>
     ) => {
-      console.log(action);
+      state.isLoadingUser = false;
+      state.isLoggedIn = false;
+      state.error = action.payload;
     },
   },
 });

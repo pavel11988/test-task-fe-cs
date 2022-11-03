@@ -38,10 +38,8 @@ const AuthForm = () => {
       password,
       remember,
     };
-    console.log(loginConfig);
+
     dispatch(authOperations.login(loginConfig));
-    // const response = await fetch("http://localhost:3000/login");
-    // console.log(response.json());
     resetForm();
   };
 

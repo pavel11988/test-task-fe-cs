@@ -8,7 +8,7 @@ interface IProps {
 
 const PublicRoute = ({ children }: IProps) => {
   const { isLoggedIn } = useAppSelector((state) => state.authReducer);
-  return <>{isLoggedIn ? <Navigate to="/main" /> : children}</>;
+  return <>{isLoggedIn ? <Navigate to="/" /> : children}</>;
 };
 
 export default PublicRoute;
