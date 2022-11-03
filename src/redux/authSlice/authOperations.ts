@@ -38,6 +38,7 @@ const login = createAsyncThunk(
       if (credentials.remember) {
         localStorage.setItem("token", response.data.accessToken);
       }
+      toast.success("Welcome!");
       return response.data;
     } catch (e: any) {
       toast.error(e.response.data);

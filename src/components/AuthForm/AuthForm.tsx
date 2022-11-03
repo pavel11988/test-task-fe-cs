@@ -91,7 +91,14 @@ const AuthForm = () => {
       <FieldContainer>
         <CheckboxContainer
           label="Remember me"
-          control={<CheckboxField checked={remember} />}
+          control={
+            <CheckboxField
+              checked={remember}
+              sx={{
+                color: "transparent",
+              }}
+            />
+          }
           onClick={() => setRemember(!remember)}
         />
       </FieldContainer>

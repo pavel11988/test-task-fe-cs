@@ -13,15 +13,13 @@ export const FormContainer = styled.div`
   width: 300px;
   margin: 0;
   padding: 0;
-
   display: flex;
   flex-direction: column;
 `;
 
 export const FieldContainer = styled(FormControl)`
   width: 300px;
-  height: 44px;
-  margin-bottom: 32px;
+  margin-bottom: 32px; ;
 `;
 export const LabelField = styled(InputLabel)`
   color: whitesmoke;
@@ -55,6 +53,7 @@ export const CheckboxField = styled(Checkbox)`
   outline-color: transparent;
   width: 18px;
   height: 17px;
+  border-radius: 3px;
 
   margin-right: 7px;
 `;
